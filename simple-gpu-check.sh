@@ -29,4 +29,4 @@ else
     vram_pct=0
 fi
 
-echo "P 'GPU Usage #local' VRAM%=${vram_pct};${warn};${crit};0;100:GPU%=${gpu_busy};${warn};${crit};0;100 'GPU0 is at ${gpu_busy}% GPU, ${vram_pct}% VRAM usage.'"
+echo "P 'GPU Usage #local' VRAM%=${vram_pct};${warn};${crit};0;100|GPU%=${gpu_busy};${warn};${crit};0;100 'GPU0 is at ${gpu_busy}% GPU, ${vram_pct}% VRAM usage.'"
