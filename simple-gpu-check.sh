@@ -2,7 +2,10 @@
 #
 # 2026-04-25, Created by H Fuchs <code@hfuchs.net>
 #
-# GPU local check for CheckMK
+# Purpose.
+# Generic GPU local check for CheckMK using only sysfs data.
+#
+# Note the '#local' convention: useful for Service Group mapping.
 #
 # TODO
 # Name of the Card.  How?
@@ -26,4 +29,4 @@ else
     vram_pct=0
 fi
 
-echo "P 'GPU Usage' VRAM%=${vram_pct};${warn};${crit};0;100:GPU%=${gpu_busy};${warn};${crit};0;100 'GPU0 is at ${gpu_busy}% GPU, ${vram_pct}% VRAM usage.'"
+echo "P 'GPU Usage #local' VRAM%=${vram_pct};${warn};${crit};0;100:GPU%=${gpu_busy};${warn};${crit};0;100 'GPU0 is at ${gpu_busy}% GPU, ${vram_pct}% VRAM usage.'"
