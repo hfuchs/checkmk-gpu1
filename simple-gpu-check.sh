@@ -14,9 +14,12 @@
 #
 # Generalise to more than one.
 #
+# Provide load-like metrics for GPU% (1 min, 1 hour, 1 day?)
+# -> agent-plugin territory
+#
 
 # Thresholds
-warn=80
+warn=85
 crit=95
 
 gpu_busy=$(cat /sys/class/drm/card0/device/gpu_busy_percent 2>/dev/null || echo 0)
@@ -29,4 +32,4 @@ else
     vram_pct=0
 fi
 
-echo "P 'GPU Usage #local' VRAM%=${vram_pct};${warn};${crit};0;100|GPU%=${gpu_busy};${warn};${crit};0;100 'GPU0 is at ${gpu_busy}% GPU, ${vram_pct}% VRAM usage.'"
+echo "P 'GPU Usage #local' VRAM%=${vram_pct};${warn};${crit};0;100|GPU%=${gpu_busy} 'GPU0 is at ${gpu_busy}% GPU, ${vram_pct}% VRAM usage.'"
